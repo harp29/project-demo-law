@@ -1,0 +1,230 @@
+@import '../abstracts/variables';
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400');
+
+
+/* FONT */
+$font-family--playfair: 'Playfair Display',
+serif;
+$font-family--poppins: 'Poppins',
+sans-serif;
+
+.font--poppins {
+  font-family: $font-family--poppins !important;
+}
+
+.font--playfair {
+  font-family: $font-family--playfair !important;
+}
+
+/* TYPOGRAPHY STYLES */
+
+////////////////////////////////////
+//
+//* HEADING STYLES *
+//
+///////////////////////////////////
+
+h1,
+h2,
+h3 {
+  line-height: 1.3;
+}
+
+.heading {
+  // font-family: $font-family--playfair;
+  font-weight: 400;
+  font-size: calculateRem(62px);
+
+  @include modifier('medium') {
+    font-size: calculateRem(51px);
+    line-height: 1.6;
+  }
+
+  @include modifier('small') {
+    font-size: calculateRem(21px);
+  }
+}
+
+////////////////////////////////////
+//
+//* PARAGRAPH STYLES *
+//
+///////////////////////////////////
+
+.type--paragraph {
+  // @include text(0.75rem, 300, 200%, none, 0px, 0px, inherit);
+  line-height: 1.66;
+  font-size: 0.95rem;
+  // letter-spacing: .075em;
+
+  @include for-tablet-portrait-up {
+    font-size: 1rem;
+  }
+
+  // MODIFIERS
+  @include modifier('small') {
+    font-size: 1.125rem;
+    font-weight: 400;
+  }
+
+}
+
+
+////////////////////////////////////
+//
+//* AHREF/LINK STYLES *
+//
+///////////////////////////////////
+.anchor-text {
+  position: relative;
+  color: $color-offset--white;
+  font-size: calculateRem(21px);
+  font-weight: 400;
+  text-transform: capitalize;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    background-color: $color-offset--white;
+    right: 0;
+    top: calc(100% + 2px);
+    transition: 0.45s width cubic-bezier(0.51, 0.18, 0, 0.88);
+    -webkit-transition: 0.45s width cubic-bezier(0.51, 0.18, 0, 0.88);
+    -moz-transition: 0.45s width cubic-bezier(0.51, 0.18, 0, 0.88);
+    -ms-transition: 0.45s width cubic-bezier(0.51, 0.18, 0, 0.88);
+    -o-transition: 0.45s width cubic-bezier(0.51, 0.18, 0, 0.88);
+  }
+
+  &:hover:after {
+    width: 100%;
+    right: auto;
+    left: 0;
+  }
+
+}
+
+.anchor-text--large{
+  font-size: calculateRem(40px);
+}
+
+.anchor-text--small {
+  font-size: 1rem;
+}
+
+.anchor-text--underline {
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: $color-offset--dark-grey;
+    left: 0;
+    top: calc(100% + 2px);
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    background-color: $color-offset--white;
+    right: 0;
+    top: calc(100% + 2px);
+    transition: 0.45s width cubic-bezier(0.51, 0.18, 0, 0.88);
+    -webkit-transition: 0.45s width cubic-bezier(0.51, 0.18, 0, 0.88);
+    -moz-transition: 0.45s width cubic-bezier(0.51, 0.18, 0, 0.88);
+    -ms-transition: 0.45s width cubic-bezier(0.51, 0.18, 0, 0.88);
+    -o-transition: 0.45s width cubic-bezier(0.51, 0.18, 0, 0.88);
+  }
+
+  &:hover:after {
+    width: 100%;
+    right: auto;
+    left: 0;
+  }
+}
+
+
+
+////////////////////////////////////
+//
+//* FONT MODIFIER STYLES *
+//
+///////////////////////////////////
+
+.type--uppercase {
+  text-transform: uppercase;
+}
+
+.captialize {
+  text-transform: capitalize;
+}
+
+//FONT COLOR MODIFIERS:
+.active {
+  color: $color-offset--white;
+  transition: 0.4s color ease-out;
+  -webkit-transition: 0.4s color ease-out;
+  -moz-transition: 0.4s color ease-out;
+  -ms-transition: 0.4s color ease-out;
+  -o-transition: 0.4s color ease-out;
+}
+
+.not-active {
+  color: $color-offset--dark-grey;
+  transition: 0.4s color ease-out;
+  -webkit-transition: 0.4s color ease-out;
+  -moz-transition: 0.4s color ease-out;
+  -ms-transition: 0.4s color ease-out;
+  -o-transition: 0.4s color ease-out;
+}
+
+.type-color--black-1 {
+  color: $color-offset--black-1;
+}
+
+.type-color--black-2 {
+  color: $color-offset--black-2;
+}
+
+.white {
+  color: $color-offset--white;
+}
+
+.type---color-light-grey {
+  color: $color-offset--light-grey;
+}
+
+.dark-grey {
+  color: $color-offset--dark-grey;
+}
+
+.type--color-green {
+  color: $color-offset--green !important;
+}
+
+
+
+
+// SPECIFIC LETTER/WORD/SENTENCE STYLES
+.letter-spacing-big {
+  letter-spacing: .7rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.center {
+  text-align: center;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}

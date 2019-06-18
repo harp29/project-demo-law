@@ -1,0 +1,102 @@
+.accordion {
+  padding: calculateRem(70px) 3% calculateRem(45px);
+  margin: 0 auto;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #131313;
+
+  @include for-desktop-up {
+    width: 40%;
+  }
+
+  .accordion__trigger {
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  // .accordion__heading {
+  // }
+
+  .accordion__underline {
+    width: 100%;
+    height: 1px;
+    background-color: $color-offset--dark-grey;
+  }
+
+  .accordion__details {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.1s all ease-out;
+    -webkit-transition: 0.1s all ease-out;
+    -moz-transition: 0.1s all ease-out;
+    -ms-transition: 0.1s all ease-out;
+    -o-transition: 0.1s all ease-out;
+  }
+
+  .accordian__details--open {
+    overflow: visible;
+    height: 100%;
+    padding: calculateRem(60px) 0;
+    opacity: 1;
+    transition: 0.1s all ease-out;
+    -webkit-transition: 0.1s all ease-out;
+    -moz-transition: 0.1s all ease-out;
+    -ms-transition: 0.1s all ease-out;
+    -o-transition: 0.1s all ease-out;
+}
+
+ .accordian__details--closed {
+   overflow: visible;
+   height: 100%;
+   padding: calculateRem(60px) 0;
+   opacity: 0;
+   transition: 0.1s all ease-out;
+   -webkit-transition: 0.1s all ease-out;
+   -moz-transition: 0.1s all ease-out;
+   -ms-transition: 0.1s all ease-out;
+   -o-transition: 0.1s all ease-out;
+ }
+
+  .accordion__trigger--active {
+    color: $color-offset--white;
+  }
+
+  .accordion__trigger-is-deactivated {
+    color: $color-offset--dark-grey;
+    transition: 0.4s color ease-out;
+    -webkit-transition: 0.4s color ease-out;
+    -moz-transition: 0.4s color ease-out;
+    -ms-transition: 0.4s color ease-out;
+    -o-transition: 0.4s color ease-out;
+
+    &:hover {
+      color: $color-offset--white;
+    }
+  }
+}
+
+.accordion__footer {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 3%;
+  padding-top: calculateRem(20px);
+  border-top: 1px solid $color-offset--dark-grey;
+  width: 88%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  .footer__item {
+    margin-bottom: 10px;
+  }
+
+  .footer__designer-dev-info {
+    align-self: flex-end;
+  }
+}
